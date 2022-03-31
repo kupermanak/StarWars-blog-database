@@ -69,14 +69,20 @@ class Pilots(Base):
     starship_name = Column(String(50), ForeignKey('starships.id'))
     starships = relationship(Starships)
 
-class Favorites(Base):
-    __tablename__ = "favorites"
+class FavoritesChar(Base):
+    __tablename__ = "favoritesChar"
     Fav_Charact = Column(String(50), ForeignKey('characters.id'), primary_key=True)
     Name_charact = Column(String(50), ForeignKey('characters.name'))
     characters = relationship(Characters)
+
+class FavoritesPlan(Base):
+    __tablename__ = "favoritesPlan"
     Fav_Planets = Column(String(50), ForeignKey('planets.id'), primary_key=True)
     Name_planet = Column(String(50), ForeignKey('planets.name'))
     planets = relationship(Planets)
+
+class FavoritesStar(Base):
+    __tablename__ = "favoritesStar"
     Fav_Starships = Column(String(50), ForeignKey('starships.id'), primary_key=True)
     Name_Starship = Column(String(50), ForeignKey('starships.name'))
     starships = relationship(Starships)
